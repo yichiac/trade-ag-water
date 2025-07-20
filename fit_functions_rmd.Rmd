@@ -170,35 +170,35 @@ column_names <- c('State', 'Real_Openness', 'Water_Use',
 
 column_names <- c(column_names, col_names)
 
-lm_stage_1_1 <- lm(Real_Openness ~ Constructed_Openness+Population+Area+
+lm_stage_1_1 <- lm(Real_Openness ~ Constructed_Openness+Population_next_yr+Area+
                      Latitude+Longitude, 
                  data = read_data_1)
 summary(lm_stage_1_1)
 nobs(lm_stage_1_1)
 
-lm_stage_1_2 <- lm(Real_Openness ~ Constructed_Openness+Population+Area+
-                     Latitude+Longitude+Precipitation+Temperature, 
+lm_stage_1_2 <- lm(Real_Openness ~ Constructed_Openness+Population_next_yr+Area+
+                     Latitude+Longitude+Precipitation_next_yr+Temperature_next_yr, 
                  data = read_data_1)
 summary(lm_stage_1_2)
 nobs(lm_stage_1_2)
 
-lm_stage_1_3 <- lm(Real_Openness ~ Constructed_Openness+Population+Area+
+lm_stage_1_3 <- lm(Real_Openness ~ Constructed_Openness+Population_next_yr+Area+
                      Latitude+Longitude+
-                     Income+Tot_Employment+Agri_Employment, 
+                     Income_next_yr+Tot_Employment_next_yr+Agri_Employment_next_yr, 
                  data = read_data_1)
 summary(lm_stage_1_3)
 nobs(lm_stage_1_3)
 
-lm_stage_1_4 <- lm(Real_Openness ~ Constructed_Openness+Population+Area+
-                     Latitude+Longitude+Precipitation+Temperature+
-                     Income+Tot_Employment+Agri_Employment, 
+lm_stage_1_4 <- lm(Real_Openness ~ Constructed_Openness+Population_next_yr+Area+
+                     Latitude+Longitude+Precipitation_next_yr+Temperature_next_yr+
+                     Income_next_yr+Tot_Employment_next_yr+Agri_Employment_next_yr, 
                  data = read_data_1)
 summary(lm_stage_1_4)
 nobs(lm_stage_1_4)
 
-lm_stage_1_5 <- lm(Real_Openness ~ Constructed_Openness+Population+Area+
-                     Latitude+Longitude+Precipitation+Temperature++
-                     Income+Tot_Employment+Agri_Employment
+lm_stage_1_5 <- lm(Real_Openness ~ Constructed_Openness+Population_next_yr+Area+
+                     Latitude+Longitude+Precipitation_next_yr+Temperature_next_yr+
+                     Income_next_yr+Tot_Employment_next_yr+Agri_Employment_next_yr
                      +next_yr_gravity_percent+next_yr_sprinkler_percent+next_yr_drip_percent, 
                  data = read_data_1)
 summary(lm_stage_1_5)
@@ -608,7 +608,7 @@ read_data_1 <- merge(read_data_1, read_data_1_next_yr, by='State')
 water_use_file <- read.csv(paste(save_folder,'water_data_states.csv',
                                  sep=""))
 col_names <- c('same_yr_Irrigated_area',	'next_yr_Irrigated_area',
-               'next_yr_Irrigated_area_gw', 'next_year_Irrigated_area_sw',
+               'next_yr_Irrigated_area_gw', 'next_yr_Irrigated_area_sw',
                'next_yr_Irrigated_water',	'next_yr_Irrigated_water_gw',	
                'next_yr_Irrigated_water_sw',	'next_yr_irrigated_area_gravity',
               'next_yr_irrigated_area_sprinkler',	'next_yr_irrigated_area_drip')
@@ -634,35 +634,35 @@ column_names <- c('State', 'Real_Openness', 'Water_Use',
 
 column_names <- c(column_names, col_names)
 
-lm_stage_1_1lm_stage_1_1 <- lm(Real_Openness ~ Constructed_Openness+Population+Area+
+lm_stage_1_1 <- lm(Real_Openness ~ Constructed_Openness+Population_next_yr+Area+
                      Latitude+Longitude, 
                  data = read_data_1)
 summary(lm_stage_1_1)
 nobs(lm_stage_1_1)
 
-lm_stage_1_2 <- lm(Real_Openness ~ Constructed_Openness+Population+Area+
-                     Latitude+Longitude+Precipitation+Temperature, 
+lm_stage_1_2 <- lm(Real_Openness ~ Constructed_Openness+Population_next_yr+Area+
+                     Latitude+Longitude+Precipitation_next_yr+Temperature_next_yr, 
                  data = read_data_1)
 summary(lm_stage_1_2)
 nobs(lm_stage_1_2)
 
-lm_stage_1_3 <- lm(Real_Openness ~ Constructed_Openness+Population+Area+
+lm_stage_1_3 <- lm(Real_Openness ~ Constructed_Openness+Population_next_yr+Area+
                      Latitude+Longitude+
-                     Income+Tot_Employment+Agri_Employment, 
+                     Income_next_yr+Tot_Employment_next_yr+Agri_Employment_next_yr, 
                  data = read_data_1)
 summary(lm_stage_1_3)
 nobs(lm_stage_1_3)
 
-lm_stage_1_4 <- lm(Real_Openness ~ Constructed_Openness+Population+Area+
-                     Latitude+Longitude+Precipitation+Temperature+
-                     Income+Tot_Employment+Agri_Employment, 
+lm_stage_1_4 <- lm(Real_Openness ~ Constructed_Openness+Population_next_yr+Area+
+                     Latitude+Longitude+Precipitation_next_yr+Temperature_next_yr+
+                     Income_next_yr+Tot_Employment_next_yr+Agri_Employment_next_yr, 
                  data = read_data_1)
 summary(lm_stage_1_4)
 nobs(lm_stage_1_4)
 
-lm_stage_1_5 <- lm(Real_Openness ~ Constructed_Openness+Population+Area+
-                     Latitude+Longitude+Precipitation+Temperature++
-                     Income+Tot_Employment+Agri_Employment
+lm_stage_1_5 <- lm(Real_Openness ~ Constructed_Openness+Population_next_yr+Area+
+                     Latitude+Longitude+Precipitation_next_yr+Temperature_next_yr+
+                     Income_next_yr+Tot_Employment_next_yr+Agri_Employment_next_yr
                      +next_yr_gravity_percent+next_yr_sprinkler_percent+next_yr_drip_percent, 
                  data = read_data_1)
 summary(lm_stage_1_5)
@@ -1151,35 +1151,35 @@ column_names <- c(column_names, col_names)
 
 read_data_1 <- read_data_1[is.finite(rowSums(read_data_1)),]
 
-lm_stage_1_1 <- lm(Real_Openness ~ Constructed_Openness+Population+Area+
+lm_stage_1_1 <- lm(Real_Openness ~ Constructed_Openness+Population_next_yr+Area+
                      Latitude+Longitude, 
                  data = read_data_1)
 summary(lm_stage_1_1)
 nobs(lm_stage_1_1)
 
-lm_stage_1_2 <- lm(Real_Openness ~ Constructed_Openness+Population+Area+
-                     Latitude+Longitude+Precipitation+Temperature, 
+lm_stage_1_2 <- lm(Real_Openness ~ Constructed_Openness+Population_next_yr+Area+
+                     Latitude+Longitude+Precipitation_next_yr+Temperature_next_yr, 
                  data = read_data_1)
 summary(lm_stage_1_2)
 nobs(lm_stage_1_2)
 
-lm_stage_1_3 <- lm(Real_Openness ~ Constructed_Openness+Population+Area+
+lm_stage_1_3 <- lm(Real_Openness ~ Constructed_Openness+Population_next_yr+Area+
                      Latitude+Longitude+
-                     Income+Tot_Employment+Agri_Employment, 
+                     Income_next_yr+Tot_Employment_next_yr+Agri_Employment_next_yr, 
                  data = read_data_1)
 summary(lm_stage_1_3)
 nobs(lm_stage_1_3)
 
-lm_stage_1_4 <- lm(Real_Openness ~ Constructed_Openness+Population+Area+
-                     Latitude+Longitude+Precipitation+Temperature+
-                     Income+Tot_Employment+Agri_Employment, 
+lm_stage_1_4 <- lm(Real_Openness ~ Constructed_Openness+Population_next_yr+Area+
+                     Latitude+Longitude+Precipitation_next_yr+Temperature_next_yr+
+                     Income_next_yr+Tot_Employment_next_yr+Agri_Employment_next_yr, 
                  data = read_data_1)
 summary(lm_stage_1_4)
 nobs(lm_stage_1_4)
 
-lm_stage_1_5 <- lm(Real_Openness ~ Constructed_Openness+Population+Area+
-                     Latitude+Longitude+Precipitation+Temperature++
-                     Income+Tot_Employment+Agri_Employment
+lm_stage_1_5 <- lm(Real_Openness ~ Constructed_Openness+Population_next_yr+Area+
+                     Latitude+Longitude+Precipitation_next_yr+Temperature_next_yr+
+                     Income_next_yr+Tot_Employment_next_yr+Agri_Employment_next_yr
                      +next_yr_gravity_percent+next_yr_sprinkler_percent+next_yr_drip_percent, 
                  data = read_data_1)
 summary(lm_stage_1_5)
